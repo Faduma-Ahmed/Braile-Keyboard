@@ -5,7 +5,7 @@
 
 - [x] Sunday, November 5th: Draft Proposal
 - [x] Saturday, November 11th: Purchase Equipment
-- [x]  Saturday, November 24th:The Interim Report and Draft of Final Report
+- []  Saturday, November 24th:The Interim Report and Draft of Final Report
 - [] Monday, December 4th: Final Report and Demo
 
 ## Tasks
