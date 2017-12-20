@@ -36,8 +36,8 @@ class BrailleConverter
 				~BrailleConverter();
 
 	};
-	// initialize the  values of the array
-	// values are static because they wont change , stay the same for every instaintiation of the class
+	// initialize the  values of the array, some possible combinations are static
+	
 	char  BrailleConverter::letter = '0';
 	char BrailleConverter::fileName[]= "text.txt";
 	char BrailleConverter::letters[27] ={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',
@@ -71,11 +71,11 @@ class BrailleConverter
 							 					   {1,0,0,1,1,1,0},
 							 					   {0,0,0,0,0,0,1}
 	 											 };
-	 	//loggingFile("initialialized Static members of object");
+	 	
 	 						
 
      
-	 //constructor will set the input values to the binary inputs array(memmber of the class)
+	 //set the input values to the binary inputs array
 	 BrailleConverter::BrailleConverter(int input[])
 	 {
 	 	for(int i=0; i<7; i++)
@@ -156,7 +156,7 @@ class BrailleConverter
 	 	
 	 }
 
-
+	// once corresponding letter is found, file is opened and letter is outfiled on to it
 	 void BrailleConverter::printBinaryInput()
 	 {
 	 	std::fstream outfile; 
@@ -174,7 +174,7 @@ class BrailleConverter
 		}
 	 }
 		
-
+// create logging file to track program result and error handling cases
 int loggingFile(string input)
 {
 	char fileName[]= "logging.txt";
@@ -196,6 +196,7 @@ int loggingFile(string input)
 
 	return 0;
 }
+//set gpio pins from omega and read input values, if 1 than button was pressed, keep track in array
 void readingPins(int *preadValues, int *pGPIO)
 {
 	int test, index, value;
@@ -244,6 +245,7 @@ void readingPins(int *preadValues, int *pGPIO)
 			}
 
 }
+//free gpio pins and reset array values back to 0
 void resetValues(int *preadValues, int *pGPIO)
 {
 	loggingFile("Function:resetValues || GPIO pins are freed and values are set back to zero for next read");
